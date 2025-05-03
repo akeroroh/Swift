@@ -1,5 +1,15 @@
-# Swift
+## ✅ 학습 진행 현황
 
---- 2025. 4. 27. [iOS & Swift - The Complete iOS App Development Bootcamp] 2~3강 실습<br/>
---- 2025. 4. 28. [iOS & Swift - The Complete iOS App Development Bootcamp] 4강 실습<br/>
---- 2025. 4. 29. [iOS & Swift - The Complete iOS App Development Bootcamp] 5~6강 실습<br/>
+| 날짜         | 강의 내용                                       |  강의   |
+|-------------|------------------------------------------------|------|
+| 2025. 4. 27 | 2~3강 실습                                    |1️⃣|
+| 2025. 4. 28 | 4강 실습                                      |1️⃣|
+| 2025. 4. 29 | 5~6강 실습                                    |1️⃣|
+| 2025. 5. 2  | 7~8강 실습                                    |1️⃣|
+| 2025. 5. 3  | 9~12강 실습                                   |1️⃣|
+
+---
+
+## 📚 강의 링크
+
+1️⃣ [iOS & Swift - The Complete iOS App Development Bootcamp](https://www.udemy.com/course/ios-and-swift-the-complete-ios-app-development-bootcamp/)
