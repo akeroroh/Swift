@@ -14,4 +14,4 @@
 
 ## 📚 강의 링크
 
-1️⃣ [iOS & Swift - The Complete iOS App Development Bootcamp](https://www.udemy.com/course/ios-and-swift-the-complete-ios-app-development-bootcamp/)
+1️⃣ [iOS & Swift - The Complete iOS App Development Bootcamp](https://www.udemy.com/course/ios-13-app-development-bootcamp/learn/lecture/16253462#questions)
