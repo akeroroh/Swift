@@ -1,5 +1,8 @@
 # 📱 Swift 학습 기록
 
+## 📌 git 올리기전에 할것!
+rm -rf BMI-Calculator/.git
+
 ## ✅ 학습 진행 현황
 
 | 날짜         | 강의 내용                                       |  강의   |
