@@ -1,7 +1,6 @@
 # 📱 Swift 학습 기록
 
 ## 📌 git 올리기전에 할것!
-rm -rf BMI-Calculator/.git
 
 ## ✅ 학습 진행 현황
 
@@ -21,8 +20,10 @@ rm -rf BMI-Calculator/.git
 | 2025. 5. 28  | 21~22강 실습                                     |1️⃣|
 | 2025. 6. 1  | 27강 실습                                     |1️⃣|
 | 2025. 6. 2  | 28강 실습                                     |1️⃣|
+| 2025. 6. 20  | 1~5강 실습                                     |2️⃣|
 ---
 
 ## 📚 강의 링크
 
 1️⃣ [iOS & Swift - The Complete iOS App Development Bootcamp](https://www.udemy.com/course/ios-13-app-development-bootcamp/learn/lecture/16253462#questions)
+2️⃣ [SwiftUI and SwiftData Masterclass 2025 – iOS App Development](https://www.udemy.com/course/swiftui-masterclass-course-ios-development-with-swift/learn/lecture/47020037#overview)
