@@ -20,6 +20,7 @@ struct SplashView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 168, height: 168)
+                .border(Color.red)
         }
         .ignoresSafeArea(.all)
 //        .background(Color("green00"))

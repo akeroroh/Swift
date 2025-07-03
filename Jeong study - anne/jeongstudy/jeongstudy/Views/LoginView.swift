@@ -13,7 +13,7 @@ struct LoginView: View {
     
     //MARK: - BODY
     var body: some View {
-        VStack(alignment: .center) {
+        VStack {
             TopTitle
             Spacer()
             IDPasswordSection
@@ -21,9 +21,10 @@ struct LoginView: View {
             LoginSection
         }
         .padding(.top, 104)
-        .padding(.horizontal)
+        .padding(.horizontal, 19)
     }
     
+    //MARK: - VIEW
     private var TopTitle: some View {
         VStack(alignment: .leading) {
             Image("starbucks-logo")
@@ -33,6 +34,7 @@ struct LoginView: View {
             
             Text("안녕하세요.\n스타벅스입니다.")
                 .font(.mainTextExtraBold)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 19)
             
             Text("회원 서비스 이용을 위해 로그인 해주세요")
@@ -40,19 +42,21 @@ struct LoginView: View {
                 .foregroundStyle(Color("gray01"))
         }
         .frame(maxWidth: .infinity)
-        .padding(0)
     }
     
     private var IDPasswordSection: some View {
-        VStack(alignment: .leading) {
-            Group {
+        VStack(alignment: .leading, spacing: 47) {
+            VStack(alignment: .leading) {
                 Text("아이디")
                 Divider()
-                    .padding(.bottom, 47)
-                
+            }
+            .font(.mainTextRegular13)
+            .foregroundStyle(Color("black01"))
+            .padding(0)
+            
+            VStack(alignment: .leading) {
                 Text("비밀번호")
                 Divider()
-                    .padding(.bottom, 47)
             }
             .font(.mainTextRegular13)
             .foregroundStyle(Color("black01"))
@@ -63,11 +67,11 @@ struct LoginView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .foregroundStyle(Color("green01"))
-                        .frame(width: 402, height: 46)
+                        .frame(height: 46)
                     
                     Text("로그인하기")
                         .font(.mainTextMedium16)
-                        .foregroundStyle(Color.white)
+                        .foregroundStyle(Color("white01"))
                 }
             }
         }
@@ -85,18 +89,23 @@ struct LoginView: View {
             Image("apple-login")
                 .frame(width: 306, height: 45)
         }
+        .padding(.horizontal, 67)
     }
     
 }
 
-struct SwiftUIView_Preview: PreviewProvider {
-    static var devices = ["iPhone 11", "iPhone 16 Pro"]
-    
-    static var previews: some View {
-        ForEach(devices, id: \.self) { device in
-            LoginView()
-                .previewDevice(PreviewDevice(rawValue: device))
-                .previewDisplayName(device)
-        }
-    }
+//struct SwiftUIView_Preview: PreviewProvider {
+//    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
+//
+//    static var previews: some View {
+//        ForEach(devices, id: \.self) { device in
+//            LoginView()
+//                .previewDevice(PreviewDevice(rawValue: device))
+//                .previewDisplayName(device)
+//        }
+//    }
+//}
+
+#Preview {
+    LoginView()
 }
