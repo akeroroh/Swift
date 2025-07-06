@@ -1,0 +1,15 @@
+//
+//  ThemeData.swift
+//  Todo
+//
+//  Created by 진아현 on 7/6/25.
+//
+
+import SwiftUI
+
+//MARK: - THEME DATA
+let themeData: [Theme] = [
+    Theme(id: 0, themeName: "Pink theme", themeColor: Color.pink),
+    Theme(id: 1, themeName: "Blue theme", themeColor: Color.blue),
+    Theme(id: 2, themeName: "Green theme", themeColor: Color.green),
+]
