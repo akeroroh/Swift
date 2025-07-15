@@ -14,6 +14,8 @@ struct SignupView: View {
     //MARK: - BODY
     var body: some View {
         VStack {
+            Spacer()
+            
             SignUpSection
             
             Spacer()
@@ -22,8 +24,8 @@ struct SignupView: View {
         }
         .padding(.horizontal, 19)
         .padding(.bottom, 72)
-        .ignoresSafeArea(.all)
-        .padding(.top, 172)
+//        .ignoresSafeArea(.all)
+//        .padding(.top, 172)
     }
     
     //MARK: - VIEW

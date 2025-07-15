@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+import Observation
+
 
 class SignupViewModel: ObservableObject {
     @AppStorage("nickname") var selectedNickname: String = ""
@@ -23,3 +25,5 @@ class SignupViewModel: ObservableObject {
         selectedPassword = password
     }
 }
+
+// @Observable 로 바꾸기

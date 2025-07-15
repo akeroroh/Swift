@@ -9,12 +9,13 @@ import SwiftUI
 
 struct OtherView: View {
     //MARK: - PROPERTIES
-    @StateObject var signupViewModel = SignupViewModel()
+    @StateObject var signupViewModel = SignupViewModel() //수정
 
     //MARK: - BODY
     var body: some View {
         VStack {
             TopTitleSection
+            
             VStack {
                 TopCustomerInfo
                 Spacer()
@@ -46,16 +47,17 @@ struct OtherView: View {
         .padding(.horizontal, 24)
         .padding(.vertical, 16)
     }
+    
     private var TopCustomerInfo: some View {
         VStack(alignment: .center, spacing: 24) {
             VStack(alignment: .center, spacing: 5) {
-                HStack(spacing: 4) {
+//                HStack(spacing: 4) {
                     Text("\(signupViewModel.selectedNickname)")
                         .font(.mainTextSemiBold24)
                         .foregroundStyle(Color.green01)
-                    Text("님")
+                     + Text(" 님")
                         .font(.mainTextSemiBold24)
-                }
+//                } 스택 3개 이상은 아웃
                 Text("환영합니다! 🙌🏻")
                     .font(.mainTextSemiBold24)
             }
@@ -92,6 +94,7 @@ struct OtherView: View {
             }
         }
     }
+        // .padding()이 아니라 frame(height:)을 줘서 동적 조절되도록 최솟값은 spacing으로 준다
     
     private var CustomerSection: some View {
         VStack(alignment: .leading, spacing: 8) {

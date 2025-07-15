@@ -9,7 +9,7 @@ import SwiftUI
 struct OtherTopItemBox: View {
     //MARK: - PROPERTIES
     let title: String
-    let image: String
+    let image: String // ImageResource로 수정
     
     //MARK: - BODY
     var body: some View {
