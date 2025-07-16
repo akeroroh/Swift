@@ -10,22 +10,23 @@ import SwiftUI
 struct SignupView: View {
     //MARK: - PROPERTIES
     @StateObject var signup = SignupViewModel()
+    @Bindable var router: NavigationRouter
 
     //MARK: - BODY
     var body: some View {
         VStack {
-            Spacer()
+            NavigationTitle(title: "가입하기", router: router)
             
-            SignUpSection
-            
-            Spacer()
-            
-            SignUpSubmitButton
+            VStack {
+                SignUpSection
+                
+                Spacer()
+                
+                SignUpSubmitButton
+            }
         }
         .padding(.horizontal, 19)
         .padding(.bottom, 72)
-//        .ignoresSafeArea(.all)
-//        .padding(.top, 172)
     }
     
     //MARK: - VIEW
@@ -50,7 +51,10 @@ struct SignupView: View {
     
     private var SignUpSubmitButton: some View {
         Button{
-            signup.loginSave()
+            if signup.nickname.count >= 1 && signup.email.count >= 1 && signup.password.count >= 1 {
+                signup.loginSave()
+                router.pop()
+            }
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
@@ -66,5 +70,5 @@ struct SignupView: View {
 }
 
 #Preview {
-    SignupView()
+    SignupView(router: .init())
 }

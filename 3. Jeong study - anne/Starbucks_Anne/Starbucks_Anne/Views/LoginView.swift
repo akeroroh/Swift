@@ -17,18 +17,30 @@ struct LoginView: View {
     }
     @FocusState private var focusField: Field?
     
+    @State private var router = NavigationRouter()
+    
     
     //MARK: - BODY
     var body: some View {
-        VStack(alignment: .leading) {
-            Spacer()
-            TopTitle
-            Spacer()
-            IDPasswordSection
-            Spacer()
-            LoginSection
+        NavigationStack(path: $router.path) {
+            VStack(alignment: .leading) {
+                Spacer()
+                TopTitle
+                Spacer()
+                IDPasswordSection
+                Spacer()
+                LoginSection
+            }
+            .padding(.horizontal, 19)
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case .home:
+                    HomeView()
+                case .signUp:
+                    SignupView(router: router)
+                }
+            }
         }
-        .padding(.horizontal, 19)
     }
     
     //MARK: - VIEW
@@ -91,9 +103,13 @@ struct LoginView: View {
         HStack {
             Spacer()
             VStack(alignment: .center, spacing: 19) {
-                Text("이메일로 회원가입하기")
-                    .font(.mainTextRegular12)
-                    .foregroundStyle(Color(.gray04))
+                Button {
+                    router.push(.signUp)
+                } label : {
+                    Text("이메일로 회원가입하기")
+                        .font(.mainTextRegular12)
+                        .foregroundStyle(Color(.gray04))
+                }
                 
                 Image(.kakaoLogin)
                     .frame(width: 306, height: 45)
