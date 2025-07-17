@@ -19,6 +19,8 @@ struct LoginView: View {
     
     @State private var router = NavigationRouter()
     
+    @AppStorage("email") private var email: String?
+    @AppStorage("password") private var password: String?
     
     //MARK: - BODY
     var body: some View {
@@ -35,9 +37,11 @@ struct LoginView: View {
             .navigationDestination(for: Route.self) { route in
                 switch route {
                 case .home:
-                    HomeView()
+                    TabBarView(router: router)
                 case .signUp:
                     SignupView(router: router)
+                case .detail(let item):
+                    CoffeeDetailView(router: router, item: item)
                 }
             }
         }
@@ -84,7 +88,9 @@ struct LoginView: View {
             .foregroundStyle(Color(.black01))
             
             Button {
-                print("press the login button")
+                if checkUser(id: login.id, pwd: login.pwd) {
+                    router.push(.home)                    
+                }
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
@@ -121,19 +127,15 @@ struct LoginView: View {
         }
     }
     
+    //MARK: - FUNCTION
+    func checkUser(id: String, pwd: String) -> Bool {
+        if email == id && password == pwd {
+            return true
+        }
+        return false
+    }
+    
 }
-
-//struct SwiftUIView_Preview: PreviewProvider {
-//    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
-//
-//    static var previews: some View {
-//        ForEach(devices, id: \.self) { device in
-//            LoginView()
-//                .previewDevice(PreviewDevice(rawValue: device))
-//                .previewDisplayName(device)
-//        }
-//    }
-//}
 
 #Preview {
     LoginView()

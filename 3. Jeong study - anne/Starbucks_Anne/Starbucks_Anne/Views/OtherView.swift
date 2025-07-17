@@ -10,6 +10,7 @@ import SwiftUI
 struct OtherView: View {
     //MARK: - PROPERTIES
     @StateObject var signupViewModel = SignupViewModel() //수정
+    @Bindable var router: NavigationRouter
 
     //MARK: - BODY
     var body: some View {
@@ -27,6 +28,7 @@ struct OtherView: View {
             .padding(.vertical, 41)
             .background(Color.white01)
         }
+        .navigationBarBackButtonHidden()
     }
     
     //MARK: - VIEW
@@ -39,6 +41,7 @@ struct OtherView: View {
             
             Button {
                 print("로그아웃")
+                router.reset()
             } label: {
                 Image(.logoutIcon)
             }
@@ -130,5 +133,5 @@ struct OtherView: View {
 
 
 #Preview {
-    OtherView()
+    OtherView(router: .init())
 }

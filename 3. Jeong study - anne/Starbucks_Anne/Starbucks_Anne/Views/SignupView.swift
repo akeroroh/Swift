@@ -25,6 +25,7 @@ struct SignupView: View {
                 SignUpSubmitButton
             }
         }
+        .navigationBarBackButtonHidden()
         .padding(.horizontal, 19)
         .padding(.bottom, 72)
     }

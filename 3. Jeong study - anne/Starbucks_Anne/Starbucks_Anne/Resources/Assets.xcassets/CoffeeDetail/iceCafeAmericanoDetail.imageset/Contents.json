@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icedCaffeAmericano.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

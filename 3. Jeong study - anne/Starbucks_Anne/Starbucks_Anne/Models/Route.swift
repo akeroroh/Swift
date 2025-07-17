@@ -10,4 +10,5 @@ import SwiftUI
 enum Route: Hashable {
     case home
     case signUp
+    case detail(item: CoffeeDetailModel)
 }

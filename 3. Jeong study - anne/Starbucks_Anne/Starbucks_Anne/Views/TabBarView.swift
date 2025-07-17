@@ -9,13 +9,14 @@ import SwiftUI
 
 struct TabBarView: View {
     //MARK: - PROPERTIES
-    private var selectedTab: Int = 0
+    var selectedTab: Int = 0
+    @Bindable var router: NavigationRouter
     
     //MARK: - BODY
     var body: some View {
         TabView {
             Tab(content: {
-                EmptyView()
+                HomeView(router: router)
             }, label: {
                 Text("Home")
                 Image(.homeIcon)
@@ -47,7 +48,7 @@ struct TabBarView: View {
             })
             
             Tab(content: {
-                OtherView()
+                OtherView(router: router)
             }, label: {
                 VStack(spacing: 10) {
                     Text("Other")
@@ -56,12 +57,13 @@ struct TabBarView: View {
                 }
             })
         }
+        .navigationBarBackButtonHidden(true)
         .tint(Color.green02)
     }
     
     
 }
 
-#Preview {
-    TabBarView()
-}
+//#Preview {
+//    TabBarView(router: .init())
+//}
