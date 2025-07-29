@@ -17,6 +17,4 @@ class RecoMenuViewModel {
         .init(image: "espressoConPanna",name: "에스프레소 콘 파나", backgroundImage: "espressoConPannaDetail", engName: "Espresso Con Panna", description: "신선한 에스프레소 샷에 풍부한 휘핑크림을 얹은 커피 음료로서, 뜨거운 커피의 맛과 차갑고 달콤한 생크림의 맛을 같이 즐길 수 있는 커피 음료", price: 4100, hotIce: .hotOnly),
         .init(image: "caramelMacchiato",name: "에스프레소 마끼아또", backgroundImage: "espressoMacchiatoDetail", engName: "Espresso Macchiato", description: "신선한 에스프레소 샷에 우유 거품을 살짝 얹은 커피 음료로서, 강렬한 에스프레소의 맛과 우유의 부드러움을 같이 즐길 수 있는 커피 음료", price: 3900, hotIce: .iceOnly)
     ]
-    
-
 }

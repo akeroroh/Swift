@@ -10,21 +10,20 @@ import SwiftUI
 struct LoginView: View {
     //MARK: - PROPERTIES
     @StateObject var login = LoginViewModel()
+    @Bindable var router: NavigationRouter
     
     enum Field: Hashable {
         case id
         case pwd
     }
+    
     @FocusState private var focusField: Field?
-    
-    @State private var router = NavigationRouter()
-    
     @AppStorage("email") private var email: String?
     @AppStorage("password") private var password: String?
     
     //MARK: - BODY
     var body: some View {
-        NavigationStack(path: $router.path) {
+//        NavigationStack(path: $router.path) {
             VStack(alignment: .leading) {
                 Spacer()
                 TopTitle
@@ -34,17 +33,17 @@ struct LoginView: View {
                 LoginSection
             }
             .padding(.horizontal, 19)
-            .navigationDestination(for: Route.self) { route in
-                switch route {
-                case .home:
-                    TabBarView(router: router)
-                case .signUp:
-                    SignupView(router: router)
-                case .detail(let item):
-                    CoffeeDetailView(router: router, item: item)
-                }
-            }
-        }
+//            .navigationDestination(for: Route.self) { route in
+//                switch route {
+//                case .home:
+//                    TabBarView(router: router, shopViewModel: <#ShopViewModel#>)
+//                case .signUp:
+//                    SignupView(router: router)
+//                case .detail(let item):
+//                    CoffeeDetailView(router: router, item: item)
+//                }
+//            }
+//        }
     }
     
     //MARK: - VIEW
@@ -138,5 +137,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView(router: .init())
 }

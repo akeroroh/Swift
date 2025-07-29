@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     //MARK: - PROPERTIES
     @AppStorage("nickname") private var nickname: String?
-//    @Bindable var router: NavigationRouter
     @Bindable var router: NavigationRouter
     
     var recoMenu: RecoMenuViewModel = .init()
@@ -21,38 +20,26 @@ struct HomeView: View {
         ScrollView() {
             HomwTopSection
             
-            VStack {
+            VStack(spacing: 20) {
                 IceChallengeSection
-            }
-            .padding(.horizontal, 10)
-            
-            RecoMenuSection
-                .padding(.vertical, 20)
-            
-            VStack {
+                
+                RecoMenuSection
+                
                 BloomingIntroSection
-            }
-            .padding(.horizontal, 10)
+                
+                WhatNewSection
 
-            WhatNewSection
-                .padding(.vertical, 20)
-            
-            VStack {
                 homeMiddleImageSection
-            }
-            .padding(.horizontal, 10)
-            
-            DessertSection
-                .padding(.vertical, 20)
-            
-            VStack {
+                
+                DessertSection
+
                 homeBottomImageSection
             }
-            .padding(.horizontal, 10)
+            .safeAreaPadding(.horizontal, 10)
         }
         .navigationBarBackButtonHidden()
-        .scrollIndicators(.hidden)
         .ignoresSafeArea()
+        .contentMargins(.bottom, 100, for: .scrollContent)
         .navigationDestination(for: Route.self) { route in
             switch route {
             case .home:

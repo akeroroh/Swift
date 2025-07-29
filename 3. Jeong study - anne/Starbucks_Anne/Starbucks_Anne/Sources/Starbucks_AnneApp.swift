@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct Starbucks_AnneApp: App {
+    init() {
+        shopViewModel = .init()
+    }
+    
+    //MARK: - PROPERTIES
+    @State var shopViewModel: ShopViewModel
+    
+    //MARK: - BODY
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            TabBarView(shopViewModel: shopViewModel)
         }
     }
 }

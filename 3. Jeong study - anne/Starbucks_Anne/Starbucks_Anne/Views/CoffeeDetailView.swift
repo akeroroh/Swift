@@ -18,8 +18,6 @@ struct CoffeeDetailView: View {
     var body: some View {
         ZStack(alignment: .top) {
             VStack {
-                
-                
                 CoffeeDetailContentSection
                 
                 Spacer()
@@ -32,7 +30,6 @@ struct CoffeeDetailView: View {
             CoffeeDetailNavationBar
         }
     }
-    
     //MARK: - VIEW
     private var CoffeeDetailNavationBar: some View {
         HStack {
@@ -61,7 +58,7 @@ struct CoffeeDetailView: View {
             CoffeeDetailInfoSection
         }
     }
-    
+  /*  변수 하위 뷰 -> struct -> init ->  ViewModifer -> 제네릭 혹은 프로토콜 */
     private var CoffeeDetailInfoSection: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading, spacing: 4) {
