@@ -39,3 +39,4 @@
 
 1️⃣ [iOS & Swift - The Complete iOS App Development Bootcamp](https://www.udemy.com/course/ios-13-app-development-bootcamp/learn/lecture/16253462#questions)  
 2️⃣ [SwiftUI and SwiftData Masterclass 2025 – iOS App Development](https://www.udemy.com/course/swiftui-masterclass-course-ios-development-with-swift/learn/lecture/47020037#overview)
+3️⃣ [UMC swift study](https://github.com/JEONG-J/UMC_8TH_Reference)
