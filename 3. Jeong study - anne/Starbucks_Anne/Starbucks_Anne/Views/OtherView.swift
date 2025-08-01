@@ -66,9 +66,9 @@ struct OtherView: View {
             }
             
             HStack(spacing: 10) {
-                OtherTopItemBox(title: "별 히스토리", image: "starHistoryIcon")
-                OtherTopItemBox(title: "전자영수증", image: "receiptIcon")
-                OtherTopItemBox(title: "나만의 메뉴", image: "myMenuIcon")
+                OtherTopItemBox(title: "별 히스토리", image: "starHistoryIcon", action: {print("별 히스토리")})
+                OtherTopItemBox(title: "전자영수증", image: "receiptIcon", action: {router.push(.receipt)})
+                OtherTopItemBox(title: "나만의 메뉴", image: "myMenuIcon", action: {print("나만의 메뉴")})
             }
         }
     }

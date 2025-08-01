@@ -10,11 +10,12 @@ struct OtherTopItemBox: View {
     //MARK: - PROPERTIES
     let title: String
     let image: String // ImageResource로 수정
+    let action: () -> Void
     
     //MARK: - BODY
     var body: some View {
         Button(action: {
-            print(title)
+            action()
         }, label: {
             ZStack() {
                 RoundedRectangle(cornerRadius: 15)

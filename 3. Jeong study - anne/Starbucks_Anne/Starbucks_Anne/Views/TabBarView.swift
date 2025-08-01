@@ -11,8 +11,8 @@ struct TabBarView: View {
     //MARK: - PROPERTIES
     var selectedTab: Int = 0
     
-    @State var shopViewModel: ShopViewModel
-    @State private var router = NavigationRouter()
+    @State var shopViewModel = ShopViewModel()
+    @State var router = NavigationRouter()
     
     //MARK: - BODY
     var body: some View {
@@ -62,20 +62,23 @@ struct TabBarView: View {
             }
             .navigationBarBackButtonHidden(true)
             .tint(Color.green02)
-        }
-        .navigationDestination(for: Route.self) { route in
-            switch route {
-            case .home:
-                TabBarView(shopViewModel: shopViewModel)
-            case .signUp:
-                SignupView(router: router)
-            case .detail(let item):
-                CoffeeDetailView(router: router, item: item)
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case .home:
+                    TabBarView(shopViewModel: shopViewModel)
+                case .signUp:
+                    SignupView(router: router)
+                case .detail(let item):
+                    CoffeeDetailView(router: router, item: item)
+                case .receipt:
+                    ReceiptView(router: router)
+                }
             }
         }
+        
     }
 }
 
-//#Preview {
-//    TabBarView(router: .init())
-//}
+#Preview {
+    TabBarView()
+}

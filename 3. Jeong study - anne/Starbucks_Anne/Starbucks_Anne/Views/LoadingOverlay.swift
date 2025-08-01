@@ -14,6 +14,7 @@ struct LoadingOverlay: ViewModifier {
                 ZStack(content: {
                     Color.black.opacity(0.6).ignoresSafeArea()
                     
+                    
                     Text("로딩중입니다 잠시만 기다려주세요!")
                         .foregroundStyle(Color.white)
                 })

@@ -12,6 +12,8 @@ struct HomeView: View {
     @AppStorage("nickname") private var nickname: String?
     @Bindable var router: NavigationRouter
     
+    @State private var popupPresented: Bool = false
+    
     var recoMenu: RecoMenuViewModel = .init()
     var dessertMenu: DessertViewModel = .init()
     
@@ -40,15 +42,12 @@ struct HomeView: View {
         .navigationBarBackButtonHidden()
         .ignoresSafeArea()
         .contentMargins(.bottom, 100, for: .scrollContent)
-        .navigationDestination(for: Route.self) { route in
-            switch route {
-            case .home:
-                HomeView(router: router)
-            case .signUp:
-                SignupView(router: router)
-            case .detail:
-                CoffeeDetailView(router: router, item: .init(image: "QQ", name: "", backgroundImage: "", engName: "q", description: "", price: 0, hotIce: .iceBoth))
-            }
+        .fullScreenCover(isPresented: $popupPresented) {
+                AdvertisementView()
+        }
+        .transaction { $0.disablesAnimations = true }
+        .task {
+            popupPresented = true
         }
     }
     

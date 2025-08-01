@@ -17,11 +17,11 @@ struct PageControl: View {
         HStack(spacing: 8) {
             ForEach(0..<numberOfPages, id: \.self) { pagingIndex in
                 let isCurrentPage = currentPage == pagingIndex
-                let height = 8.0
-                let width = 8.0
+                let height = 5.0
+                let width = 5.0
                 
                 Circle()
-                    .stroke(isCurrentPage ? .black03 : .gray02, lineWidth: 7)
+                    .stroke(isCurrentPage ? .black03 : .gray02, lineWidth: 3)
                     .fill(isCurrentPage ? .black03 : .white01)
                     .frame(width: width, height: height)
             }

@@ -10,7 +10,6 @@ import SwiftUI
 struct LoginView: View {
     //MARK: - PROPERTIES
     @StateObject var login = LoginViewModel()
-    @Bindable var router: NavigationRouter
     
     enum Field: Hashable {
         case id
@@ -23,27 +22,15 @@ struct LoginView: View {
     
     //MARK: - BODY
     var body: some View {
-//        NavigationStack(path: $router.path) {
-            VStack(alignment: .leading) {
-                Spacer()
-                TopTitle
-                Spacer()
-                IDPasswordSection
-                Spacer()
-                LoginSection
-            }
-            .padding(.horizontal, 19)
-//            .navigationDestination(for: Route.self) { route in
-//                switch route {
-//                case .home:
-//                    TabBarView(router: router, shopViewModel: <#ShopViewModel#>)
-//                case .signUp:
-//                    SignupView(router: router)
-//                case .detail(let item):
-//                    CoffeeDetailView(router: router, item: item)
-//                }
-//            }
-//        }
+        VStack(alignment: .leading) {
+            Spacer()
+            TopTitle
+            Spacer()
+            IDPasswordSection
+            Spacer()
+            LoginSection
+        }
+        .padding(.horizontal, 19)
     }
     
     //MARK: - VIEW
@@ -88,7 +75,7 @@ struct LoginView: View {
             
             Button {
                 if checkUser(id: login.id, pwd: login.pwd) {
-                    router.push(.home)                    
+//                    router.push(.home)                    
                 }
             } label: {
                 ZStack {
@@ -109,7 +96,7 @@ struct LoginView: View {
             Spacer()
             VStack(alignment: .center, spacing: 19) {
                 Button {
-                    router.push(.signUp)
+//                    router.push(.signUp)
                 } label : {
                     Text("이메일로 회원가입하기")
                         .font(.mainTextRegular12)
@@ -137,5 +124,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(router: .init())
+    LoginView()
 }

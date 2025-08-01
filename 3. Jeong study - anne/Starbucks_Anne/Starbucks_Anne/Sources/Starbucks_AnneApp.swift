@@ -6,20 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Starbucks_AnneApp: App {
-    init() {
-        shopViewModel = .init()
-    }
-    
     //MARK: - PROPERTIES
-    @State var shopViewModel: ShopViewModel
     
     //MARK: - BODY
     var body: some Scene {
         WindowGroup {
-            TabBarView(shopViewModel: shopViewModel)
+            TabBarView()
         }
+        .modelContainer(for: ReceiptsModel.self)
     }
 }
